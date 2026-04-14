@@ -38,6 +38,8 @@ storage/*.json
 
 # local python virtual environments
 backend-example/.venv
+__pycache__/
+*.pyc
 
 # vercel
 .vercel
