@@ -1,19 +1,19 @@
 # Service Platform Showcase
 
-This repository is a simplified portfolio project derived from a larger real-world system. It has been reduced for demonstration purposes so it can be shared publicly with recruiters and employers.
+This is a simplified full-stack portfolio project I put together from a larger real-world system.
 
-Sensitive details, internal workflows, and production-level business logic have been removed. The goal of this repo is to show practical frontend and backend implementation choices in a clear, readable way.
+I did not want to post the original project publicly because it had business-specific logic and private internal details in it. So this version is stripped down on purpose. The idea here is to show how I structure a frontend app, how I handle forms and API routes, and how I think about backend organization without exposing anything sensitive.
 
-## What This Project Demonstrates
+## What I Wanted This Repo To Show
 
-- building a responsive marketing site with Next.js
-- structuring reusable React components with TypeScript
-- creating typed form flows with validation
-- writing simple API routes for request and contact handling
-- organizing metadata and route structure
-- separating public frontend work from a backend API example
+- a clean Next.js frontend
+- reusable React components
+- typed form validation
+- simple API routes
+- a separate FastAPI backend example
+- code that is readable and not overengineered
 
-## Technologies Used
+## Tech Used
 
 ### Frontend
 
@@ -23,52 +23,41 @@ Sensitive details, internal workflows, and production-level business logic have 
 - Tailwind CSS
 - Zod
 
-### Backend API Example
+### Backend Example
 
 - FastAPI
 - SQLAlchemy
 - PostgreSQL
 - Pydantic
 
-## Portfolio Scope
+## What Is In Here
 
-This repo intentionally includes:
+### Frontend app
 
-- public-safe UI and frontend architecture
-- example API request handling
-- a simplified backend example with CRUD structure
-- clean project documentation
+The frontend is a small demo app with:
 
-This repo intentionally does not include:
+- a homepage
+- a features page
+- a request form
+- a contact form
+- shared validation
+- basic API routes
+- metadata, sitemap, robots, and social image routes
 
-- private customer data
-- real credentials or production secrets
-- internal business documents
-- private pricing tools
-- proprietary or production-only automation logic
+### Backend example
 
-## Frontend Highlights
+Inside [`backend-example/`](./backend-example) I added a separate FastAPI project to show backend structure more clearly.
 
-- multi-page frontend built with the Next.js App Router
-- reusable components for layout, hero sections, and forms
-- contact and request flows with schema validation
-- sitemap, robots, and social metadata support
-- mobile-focused layout and CTA handling
+That part includes:
 
-## Backend Showcase
-
-The folder [`backend-example/`](./backend-example) contains a separate FastAPI backend example for recruiters to review.
-
-It includes:
-
-- basic API structure
 - example `GET`, `POST`, `PATCH`, and `DELETE` endpoints
-- PostgreSQL-ready SQLAlchemy models
-- CRUD helper functions
-- database session dependency
-- clean folder structure
+- PostgreSQL-ready models
+- CRUD helpers
+- schema files
+- database session setup
+- a simple test
 
-This backend is intentionally not wired into the live site. It exists to show backend fundamentals in a simple and professional way.
+I kept it simple on purpose. No auth, no real business rules, no secrets.
 
 ## Project Structure
 
@@ -99,7 +88,7 @@ service-platform-showcase/
 └── tsconfig.json
 ```
 
-## Running The Frontend Locally
+## Run The Frontend
 
 ```bash
 npm install
@@ -107,11 +96,11 @@ cp .env.example .env.local
 npm run dev
 ```
 
-Open:
+Then open:
 
 - `http://localhost:3000`
 
-## Running The Backend Example
+## Run The Backend Example
 
 ```bash
 cd backend-example
@@ -120,11 +109,13 @@ cp .env.example .env
 uvicorn app.main:app --reload
 ```
 
-Open:
+Then open:
 
 - `http://127.0.0.1:8000/docs`
 
-## Notes For Reviewers
+## Notes
 
-- This is a portfolio-safe demo based on a real project.
-- Backend logic is intentionally simplified to focus on structure, clarity, and code organization.
+- This repo is meant for public review.
+- The original project was more complex than this.
+- I removed sensitive and production-level logic on purpose.
+- The code here is meant to feel practical and readable, not flashy.
